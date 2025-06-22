@@ -2,9 +2,11 @@ package HandlingWebTable;
 
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -35,12 +37,12 @@ public class HandlingDynamicWebTableWithPagination {
         Thread.sleep(5000);
         String text = driver.findElement(By.xpath("//div[@id='big_table_info']")).getText();
 
-     // Example text: "Showing 1 to 20 of 843 entries"
-     int total_Pages = Integer.parseInt(
-         text.substring(text.indexOf("of ") + 3, text.indexOf("entries")).trim()
-     );
+        // Example text: "Showing 1 to 20 of 843 entries"
+        int total_Pages = Integer.parseInt(
+        text.substring(text.indexOf("of ") + 3, text.indexOf("entries")).trim()
+        		);
 
-     System.out.println(total_Pages); // Outputs: 843
+        System.out.println(total_Pages); // Outputs: 843
 
         for(int i=2;i<=4;i++)
         {
@@ -48,6 +50,18 @@ public class HandlingDynamicWebTableWithPagination {
         	Thread.sleep(3000);
         }
         
+        List<WebElement> rows=driver.findElements(By.xpath("//table[@id='big_table']//tbody/tr"));
+        System.out.println("Size of the rows-> "+rows.size());
+        
+        //Get all the Products Name.
+        System.out.println("Product Name");
+        for(int r=1;r<=rows.size();r++)	
+        {
+            String product_Name=driver.findElement(By.xpath("//table[@id='big_table']//tbody/tr["+r+"]//td[3]")).getText();
+            System.out.println(product_Name);
+        }
+       
+       
         
         
 
