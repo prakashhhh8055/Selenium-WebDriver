@@ -35,10 +35,18 @@ public class TFMPriceSliderPractice {
         //scrollIntoView(true) to see the element on the top of the window/screen after scroll
         js.executeScript("arguments[0].scrollIntoView(true);",Price_Slider);
         Price_Slider.click();
+        
+        //Move Min Price Slider
         WebElement Min_Price_Slider=driver.findElement(By.xpath("(//div[@role='slider'])[1]"));
         System.out.println("Current Min location of the price slider "+Min_Price_Slider.getLocation()); //(111, 1206)
         actions.clickAndHold(Min_Price_Slider).moveByOffset(50, 0).release().perform();        
-        System.out.println("Current Min location After the Drag and Drop "+Min_Price_Slider.getLocation()); //(111, 1206)
+        System.out.println("Current Min location After the Drag and Drop "+Min_Price_Slider.getLocation()); //(160, 817)
+        
+        //Move Max Price Slider
+        WebElement Max_Price_Slider=driver.findElement(By.xpath("(//div[contains(@role,'slider')])[2]"));
+        System.out.println("Current Max location of the price slider "+Max_Price_Slider.getLocation()); //(366, 818)
+        actions.clickAndHold(Max_Price_Slider).moveByOffset(-50, 0).release().perform();        
+        System.out.println("Current Max location After the Drag and Drop "+Max_Price_Slider.getLocation()); //(315, 817)
         
 
         
