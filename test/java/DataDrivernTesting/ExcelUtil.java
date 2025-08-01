@@ -85,7 +85,7 @@ public class ExcelUtil {
 		
 	}
 	
-	public static void fillGreenColor(String xlfile,String xlsheet,int rownum,int colnum,String data) throws IOException
+	public static void fillGreenColor(String xlfile,String xlsheet,int rownum,int colnum) throws IOException
 	{
 		fi=new FileInputStream(xlfile);
 		wb=new XSSFWorkbook(fi);
@@ -106,7 +106,7 @@ public class ExcelUtil {
 		fo.close();
 	}
 	
-	public static void fillRedColor(String xlfile,String xlsheet,int rownum,int colnum,String data) throws IOException
+	public static void fillRedColor(String xlfile,String xlsheet,int rownum,int colnum) throws IOException
 	{
 		fi=new FileInputStream(xlfile);
 		wb=new XSSFWorkbook(fi);
