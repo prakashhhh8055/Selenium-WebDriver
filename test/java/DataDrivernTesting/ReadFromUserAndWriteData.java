@@ -25,7 +25,7 @@ public class ReadFromUserAndWriteData {
 		System.out.println("How Many Cells you want to Enter");
 		int NumberOfCells=sc.nextInt();
 		
-		for(int r=0;r<=NumberOfRows;r++)
+		for(int r=1;r<=NumberOfRows;r++)
 		{
 			XSSFRow currentRow=sheet.createRow(r);
 			System.out.println("Please Enter the cell data");
@@ -36,7 +36,7 @@ public class ReadFromUserAndWriteData {
 			}
 		}
 		
-		FileOutputStream file=new FileOutputStream(System.getProperty("user.dir")+"\\testdata\\OwnFile.xlsx");
+		FileOutputStream file=new FileOutputStream(System.getProperty("user.dir")+"\\testdata\\OwnFile12.xlsx");
 		
 		workbook.write(file);
 		workbook.close();
