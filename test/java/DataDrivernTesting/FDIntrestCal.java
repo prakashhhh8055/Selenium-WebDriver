@@ -18,7 +18,7 @@ public class FDIntrestCal {
 		driver.get("https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html");
 		driver.manage().window().maximize();
 		
-		String filepath=System.getProperty("user.dir")+"\\testdata\\InterestCalculationTestData2.xlsx";
+		String filepath=System.getProperty("user.dir")+"\\testdata\\IntrestCalDemo.xlsx";
 		
 		int rowsCount=ExcelUtil.getRowCount(filepath, "DDT");
 		
