@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<suite name="groupingSuite">
+  <test thread-count="5" name="groupingTest">
+  
+  	<groups>
+  		<run>
+  			<include name="functional"></include>
+  			<!--<exclude name="regression"></exclude>-->
+  		</run>
+  	</groups>
     <classes>
-      <class name="WorkingWithTestNG.NewTest1"/>
+      <class name="WorkingWithTestNG.paymentTest"/>
+      <class name="WorkingWithTestNG.signUpTest"/>
+      <class name="WorkingWithTestNG.loginTest"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> <!-- groupingTest -->
+</suite> <!-- groupingSuite -->
