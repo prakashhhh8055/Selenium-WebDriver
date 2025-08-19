@@ -1,32 +1,22 @@
-package ParametersDemo;
+package WorkingWithListeners;
 
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ParametersExample {
-	
+public class OrganeHRM {
+
 	WebDriver driver;
 	@BeforeClass
-	@Parameters({"browser"})
-	void setup(String br) throws InterruptedException
+	void setup() throws InterruptedException
 	{
-		switch(br.toLowerCase())
-		{
-		case "chrome": driver=new ChromeDriver();break;
-		case "edge": driver=new EdgeDriver();break;
-		case "firefox": driver=new FirefoxDriver();break;
-		default: System.out.println("Invalid Browser");return;
-		}
+		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		driver.manage().window().maximize();
@@ -51,7 +41,7 @@ public class ParametersExample {
 	@Test(priority=0)
 	void urlTest()
 	{
-		Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/web/index.php/auth");
 	}
 	
 	@Test(priority=3)
@@ -70,5 +60,4 @@ public class ParametersExample {
 	{
 		driver.quit();
 	}
-
 }
