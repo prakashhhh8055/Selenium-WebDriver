@@ -24,7 +24,7 @@ public class testLogin {
 	@Test
 	void testlogin()
 	{
-		LoginPage lp=new LoginPage(driver);
+		LoginPage1 lp=new LoginPage1(driver);
 		lp.SetPhoneNumber("2124567890");
 		lp.ClickSendVerificationCodeBtn();
 		
